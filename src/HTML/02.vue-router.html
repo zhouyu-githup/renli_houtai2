@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+</head>
+<body>
+    <!-- <div id="app">
+        <h1>hello! App!</h1>
+        <p>
+            <router-link to="/">
+                去首页
+            </router-link>
+            <router-link to="/about">
+                关于我
+            </router-link>
+            <router-view>
+                
+            </router-view>
+        </p>
+    </div> -->
+
+<script>
+    const Home = { template: '<div>Home</div>' }
+    const About = { template: '<div>About</div>' }
+    // 定义路由
+    const routes = [
+        {path:'/',component:Home},
+        {path:'/about',component:About}
+    ]
+    const router = VueRouter.createRouter({
+        // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
+        history: VueRouter.createWebHashHistory(),
+        routes, // `routes: routes` 的缩写
+    })
+    // 5. 创建并挂载根实例
+    const app = Vue.createApp({})
+</script>
+</body>
+</html>
